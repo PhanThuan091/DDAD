@@ -24,8 +24,8 @@ def train(config):
     unet = unet.to(config.model.device)
     unet.train()
     unet = torch.nn.DataParallel(unet)
-    # checkpoint = torch.load(os.path.join(os.path.join(os.getcwd(), config.model.checkpoint_dir), config.data.category,'1000'))
-    # unet.load_state_dict(checkpoint)  
+    checkpoint = torch.load(os.path.join(os.path.join(os.getcwd(), config.model.checkpoint_dir), config.data.category,'1000'))
+    unet.load_state_dict(checkpoint)  
     trainer(unet, config.data.category, config)#config.data.category, 
 
 
