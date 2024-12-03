@@ -104,6 +104,6 @@ def domain_adaptation(unet, config, fine_tune):
             # torch.save(feature_extractor.state_dict(), os.path.join(os.path.join(os.getcwd(), config.model.checkpoint_dir), config.data.category,f'feat{epoch+1}'))
             torch.save(feature_extractor.state_dict(), os.path.join(os.path.join(os.getcwd(), config.model.checkpoint_dir),f'feat{epoch+1}'))
     else:
-        checkpoint = torch.load(os.path.join(os.path.join(os.getcwd(), config.model.checkpoint_dir), config.data.category,f'feat{config.model.DA_chp}'))#{config.model.DA_chp}            
+        checkpoint = torch.load(os.path.join(os.path.join(os.getcwd(), config.model.checkpoint_dir),f'feat{config.model.DA_chp}'))#{config.model.DA_chp}            
         feature_extractor.load_state_dict(checkpoint)  
     return feature_extractor
