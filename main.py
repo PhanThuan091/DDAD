@@ -55,7 +55,7 @@ def finetuning(config):
 
 
 def parse_args():
-    config_dir = '/kaggle/input/config-ddad/screw/'
+    config_dir = '/kaggle/working/'
     cmdline_parser = argparse.ArgumentParser('DDAD')    
     cmdline_parser.add_argument('-cfg', '--config', 
                                 default= os.path.join(os.path.dirname(os.path.abspath(__file__)),'config.yaml'), 
