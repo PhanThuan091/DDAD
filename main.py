@@ -46,7 +46,7 @@ def finetuning(config):
     # checkpoint = torch.load(os.path.join(os.getcwd(), config.model.checkpoint_dir, config.data.category, str(config.model.load_chp)))
     # checkpoint_path = '/kaggle/working/DDAD/checkpoint/1750'
     # checkpoint = torch.load(checkpoint_path)
-    checkpoint = torch.load(os.path.join(os.getcwd(),  str(config.model.load_chp)))
+    checkpoint = torch.load(os.path.join(os.getcwd(), 'checkpoint', str(config.model.load_chp)))
     unet = torch.nn.DataParallel(unet)
     unet.load_state_dict(checkpoint)    
     unet.to(config.model.device)
